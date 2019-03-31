@@ -43,7 +43,7 @@ local python_venv='$(venv_info_prompt)'
 
 PROMPT="╭─${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
 ╰─$PR_PROMPT ${python_venv}"
-RPROMPT="${return_code}"
+RPROMPT="${return_code} "
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{yellow}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %f"

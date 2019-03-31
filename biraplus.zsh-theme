@@ -28,7 +28,7 @@ fi
 local return_code="%(?..%F{red}%? ↵%f)"
 
 local user_host="${PR_USER}%F{cyan}@${PR_HOST}"
-local current_dir="%B%F{blue}%~%f%b"
+local current_dir="%B%F{cyan}%~%f%b"
 local rvm_ruby=''
 if ${HOME}/.rvm/bin/rvm-prompt &> /dev/null; then # detect user-local rvm installation
   rvm_ruby='%F{red}‹$(${HOME}/.rvm/bin/rvm-prompt i v g s)›%f'
@@ -39,7 +39,7 @@ elif which rbenv &> /dev/null; then # detect Simple Ruby Version Management
 fi
 local git_branch='$(git_prompt_info)'
 venv_info_prompt() { [ $VIRTUAL_ENV ] && echo "%f(%F{red}$(basename $VIRTUAL_ENV)%f) "; }
-singularity_info_prompt() { [ $SINGULARITY_NAME ] && echo "%f:%B%F{yellow}[$(basename $SINGULARITY_NAME)]%f"; }
+singularity_info_prompt() { [ $SINGULARITY_NAME ] && echo "%f:%B%F{blue}[$(basename $SINGULARITY_NAME)]%f"; }
 local python_venv='$(venv_info_prompt)'
 local singularity_prompt='$(singularity_info_prompt)'
 

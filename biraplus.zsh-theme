@@ -39,9 +39,11 @@ elif which rbenv &> /dev/null; then # detect Simple Ruby Version Management
 fi
 local git_branch='$(git_prompt_info)'
 venv_info_prompt() { [ $VIRTUAL_ENV ] && echo "%f(%F{red}$(basename $VIRTUAL_ENV)%f) "; }
+singularity_info_prompt() { [ $SINGULARITY_NAME ] && echo "%f:%B%F{yellow}[$(basename $SINGULARITY_NAME)]%f"; }
 local python_venv='$(venv_info_prompt)'
+local singularity_prompt='$(singularity_info_prompt)'
 
-PROMPT="╭─${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
+PROMPT="╭─${user_host}${singularity_prompt} ${current_dir} ${rvm_ruby} ${git_branch}
 ╰─$PR_PROMPT ${python_venv}"
 RPROMPT="${return_code} "
 

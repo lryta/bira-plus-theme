@@ -43,7 +43,7 @@ singularity_info_prompt() { [ $SINGULARITY_NAME ] && echo "%f:%F{blue}[$(basenam
 local python_venv='$(venv_info_prompt)'
 local singularity_prompt='$(singularity_info_prompt)'
 
-PROMPT="╭─${user_host}${singularity_prompt} ${current_dir} ${rvm_ruby} ${git_branch}
+PROMPT="╭─${user_host}${singularity_prompt} ${current_dir} ${rvm_ruby} ${git_branch}[%*]
 ╰─$PR_PROMPT ${python_venv}"
 RPROMPT="${return_code} "
 
